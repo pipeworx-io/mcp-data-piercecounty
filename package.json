@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-data-piercecounty",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Pierce County Open Data (internal.open.piercecountywa.gov) Socrata MCP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-data-piercecounty": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "data-piercecounty"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-data-piercecounty.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/data-piercecounty",
   "pipeworx": {
-    "sourceHash": "v1-19bdc471d36decfc11242d5e2fe7c403ec8c1663be07114967dc925b0d1e3161",
-    "sourceCommit": "ba9dd6df5992aeb16ef2425ee86d1752c34ca636"
+    "mode": "gateway",
+    "slug": "data-piercecounty",
+    "gatewaySlug": "data-piercecounty",
+    "sourceHash": "v1-5ad2ebd91f72ed11df511eb40416c3d1470d03cf612c74d93a9dbe5f576648f7",
+    "sourceCommit": "0b3faaa4d85299a961dd86dea75a0f0e1dad280c"
   }
 }
